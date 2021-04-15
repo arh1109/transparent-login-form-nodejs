@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body OnLoad="document.myform.username.focus();">
+
+    <form class="login-box" name="myform">
+        <h1>Sign Up</h1>
+
+        <div class="textbox">
+            
+            <input id="reg" type="password" placeholder="Please fill out the fields" style="cursor:auto; margin-left: 0;" readonly>
+        </div>
+
+        <div class="textbox"  id="usertb">
+            <i class="fas fa-user"></i>
+            <input type="text" id="user-input" name="username" placeholder="Username">
+        </div>
+
+        <div class="textbox" id="passwtb">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="pw-input" placeholder="Password">
+        </div>
+
+        <div class="textbox" id="emailtb">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email-input" placeholder="Enter fake email">
+        </div>
+
+        <a href="./login.html"><input type="button" class="btn" value="Sign Me Up"></a>
+    </form>
+    <script>
+        const user = document.getElementById('usertb');
+        const pw = document.getElementById('passwtb');
+        const email = document.getElementById('emailtb');
+        const userIn = document.getElementById('user-input');
+        const pwIn = document.getElementById('pw-input');
+        const emailIn = document.getElementById('email-input');
+
+        userIn.addEventListener('focus', (e) => {
+            user.style="border-bottom: 1px solid #4caf50;";
+        })
+
+        pwIn.addEventListener('focus', (e) => {
+            if(userIn.innerText == '')
+                {
+                    changeUserRed();
+                }
+            pw.style="border-bottom: 1px solid #4caf50;";   
+        })
+        emailIn.addEventListener('focus', (e) => {
+            if(userIn.innerText == '')
+                {
+                    // change color here
+                    changeUserRed();
+                }
+            if(pwIn.innerText == '')
+                {
+                    // change color here
+                    changePwRed();
+                }
+            email.style="border-bottom: 1px solid #4caf50;";        
+        })
+
+        function changeEmailRed() {
+            email.style="border-bottom: 1px solid red;";
+        }
+
+        function changePwRed() {
+            pw.style="border-bottom: 1px solid red;";
+        }
+
+        function changeUserRed() {
+            user.style="border-bottom: 1px solid red;";
+        }
+        const arr = [user, pw, email];
+        
+    </script>
+  </body>
+</html>
