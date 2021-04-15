@@ -7,7 +7,7 @@
   </head>
   <body OnLoad="document.myform.username.focus();">
 
-    <form class="login-box" name="myform">
+    <form action="http://localhost:8080/register" method="post" class="login-box" name="myform">
         <h1>Sign Up</h1>
 
         <div class="textbox">
@@ -22,15 +22,15 @@
 
         <div class="textbox" id="passwtb">
             <i class="fas fa-lock"></i>
-            <input type="password" id="pw-input" placeholder="Password">
+            <input type="password" id="pw-input" name="password" placeholder="Password">
         </div>
 
         <div class="textbox" id="emailtb">
             <i class="fas fa-envelope"></i>
-            <input type="email" id="email-input" placeholder="Enter fake email">
+            <input type="email" id="email-input" name="email" placeholder="Enter fake email">
         </div>
 
-        <a href="./login.html"><input type="button" class="btn" value="Sign Me Up"></a>
+        <a href="./login.html"><input type="submit" class="btn" value="Sign Me Up"></a>
     </form>
     <script>
         const user = document.getElementById('usertb');

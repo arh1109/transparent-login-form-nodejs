@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form class="login-box">
+    <form action="http://localhost:8080/users" method="post" class="login-box" id="formy" enctype="application/json">
       <h1>Login</h1>
       <div class="textbox">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Username" name="username">
       </div>
 
       <div class="textbox">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" name="password">
       </div>
 
-      <input type="button" class="btn" value="Sign in">
+      <input type="submit" id="sub-btn" class="btn" value="Sign in">
+
       <a href='./register.html'><input type="button" class="btn" value="Sign Up Now"></a>
     </form>
+    <script>
+      // const submitBtn = document.getElementById('sub-btn');
+      // const form = document.getElementById('formy');
+      // submitBtn.addEventListener('click', () => {
+      //   form.submit();
+      // })
+    </script>
   </body>
 </html>
